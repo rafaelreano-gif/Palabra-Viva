@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlace de tu Aplicación</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #F1E5AC 0%, #FFFFFF 100%);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            border: 2px solid #D4AF37;
+        }
+        
+        h1 {
+            color: #B8860B;
+            margin-bottom: 20px;
+        }
+        
+        .link-box {
+            background: #F8F8F8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #D4AF37;
+            word-break: break-all;
+        }
+        
+        .url {
+            font-size: 18px;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+        
+        .copy-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        
+        .steps {
+            text-align: left;
+            margin-top: 30px;
+        }
+        
+        .step {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .step:before {
+            content: "•";
+            color: #D4AF37;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Enlace de Tu Aplicación</h1>
+        
+        <div class="link-box">
+            <p>Tu aplicación está disponible en:</p>
+            <p class="url" id="app-url">https://TU_USUARIO.github.io/el-poder-de-la-palabra/</p>
+            <button class="copy-btn" onclick="copyUrl()">📋 Copiar Enlace</button>
+        </div>
+        
+        <div class="steps">
+            <h3>📝 Para compartir:</h3>
+            <div class="step">Copia el enlace de arriba</div>
+            <div class="step">Pégalo en WhatsApp, Facebook, Email, etc.</div>
+            <div class="step">¡Comparte la bendición con otros!</div>
+        </div>
+    </div>
+
+    <script>
+        function copyUrl() {
+            const url = document.getElementById('app-url').textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('✅ Enlace copiado al portapapeles');
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+        
+        // Reemplazar con tu usuario real
+        const userName = "TU_USUARIO"; // Cambia esto por tu usuario de GitHub
+        if (userName !== "TU_USUARIO") {
+            document.getElementById('app-url').textContent = 
+                `https://${userName}.github.io/el-poder-de-la-palabra/`;
+        }
+    </script>
+</body>
+</html>
