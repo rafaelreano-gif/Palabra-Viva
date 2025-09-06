@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Poder de la Palabra - Versículos Bíblicos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-light: #F1E5AC;
+            --gold-dark: #B8860B;
+            --white: #FFFFFF;
+            --off-white: #F8F8F8;
+            --gray: #333333;
+            --light-gray: #777777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--white) 100%);
+            color: var(--gray);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid var(--gold-primary);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .input-section {
+            grid-column: 1 / -1;
+            background-color: var(--off-white);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--gold-light);
+        }
+        
+        .input-section h2 {
+            color: var(--gold-dark);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .input-section h2 i {
+            color: var(--gold-primary);
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 1px solid var(--gold-light);
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+        
+        button {
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .section {
+            background-color: var(--off-white);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid var(--gold-light);
+            height: fit-content;
+        }
+        
+        .section h2 {
+            color: var(--gold-dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gold-light);
+        }
+        
+        .section h2 i {
+            color: var(--gold-primary);
+        }
+        
+        .verse-card {
+            background-color: var(--white);
+            border-left: 4px solid var(--gold-primary);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .verse-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: var(--gray);
+        }
+        
+        .verse-reference {
+            font-weight: bold;
+            color: var(--gold-dark);
+            margin-bottom: 10px;
+        }
+        
+        .interpretation {
+            background-color: var(--gold-light);
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            margin-top: 10px;
+            border-left: 3px solid var(--gold-primary);
+        }
+        
+        .gospel-content {
+            line-height: 1.8;
+        }
+        
+        .gospel-content .reference {
+            font-weight: bold;
+            color: var(--gold-dark);
+            margin: 15px 0 5px;
+        }
+        
+        .message {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.1rem;
+            color: var(--light-gray);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid var(--gold-light);
+            border-top: 4px solid var(--gold-primary);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+            color: var(--white);
+        }
+        
+        .tab-container {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--gold-light);
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .tab.active {
+            border-bottom: 3px solid var(--gold-primary);
+            color: var(--gold-dark);
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+
+        .publish-steps {
+            background-color: var(--off-white);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid var(--gold-light);
+        }
+
+        .publish-steps h3 {
+            color: var(--gold-dark);
+            margin-bottom: 15px;
+        }
+
+        .publish-steps ol {
+            padding-left: 20px;
+        }
+
+        .publish-steps li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-bible"></i> El Poder de la Palabra</h1>
+            <p>Encuentra consuelo, guía y esperanza en las Sagradas Escrituras</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="input-section">
+                <h2><i class="fas fa-heart"></i> ¿Cómo te sientes hoy?</h2>
+                <textarea id="user-input" placeholder="Por ejemplo: Me siento ansioso por el futuro y necesito paz interior..."></textarea>
+                <button id="find-verse">
+                    <i class="fas fa-search"></i> Encontrar versículos
+                </button>
+            </div>
+            
+            <div class="section">
+                <h2><i class="fas fa-verse"></i> Versículos Sugeridos</h2>
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Buscando el versículo perfecto para ti...</p>
+                </div>
+                <div class="results-section" id="results">
+                    <div class="message">
+                        <i class="fas fa-hands-helping"></i>
+                        <p>Comparte cómo te sientes y te sugeriremos versículos bíblicos con interpretación que puedan brindarte consuelo y guía.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="tab-container">
+                    <div class="tab active" data-tab="gospel">Evangelio del Día</div>
+                    <div class="tab" data-tab="prayer">Oración Diaria</div>
+                </div>
+                
+                <div class="tab-content active" id="gospel-content">
+                    <h2><i class="fas fa-church"></i> Evangelio de Hoy</h2>
+                    <div class="gospel-content">
+                        <div class="reference">Juan 14:1-6</div>
+                        <p>"No se turbe vuestro corazón; creéis en Dios, creed también en mí. En la casa de mi Padre muchas moradas hay; si así no fuera, yo os lo hubiera dicho; voy, pues, a preparar lugar para vosotros. Y si me fuere y os preparare lugar, vendré otra vez, y os tomaré a mí mismo, para que donde yo estoy, vosotros también estéis. Y sabéis a dónde voy, y sabéis el camino. Le dijo Tomás: Señor, no sabemos a dónde vas; ¿cómo, pues, podemos saber el camino? Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí."</p>
+                        
+                        <div class="interpretation">
+                            <strong>Interpretación:</strong> En este pasaje, Jesús consuela a sus discípulos ante su partida inminente. Nos recuerda que, aunque enfrentemos incertidumbre, Él ya ha preparado un lugar para nosotros en el Reino de los Cielos. Jesús se presenta como el único camino hacia Dios, ofreciendo esperanza y seguridad a todos los creyentes.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="prayer-content">
+                    <h2><i class="fas fa-pray"></i> Oración para Hoy</h2>
+                    <div class="gospel-content">
+                        <p>Querido Padre celestial,</p>
+                        <p>En este día acudo a Ti con el corazón abierto y humilde. Te doy gracias por el don de la vida y por todas las bendiciones que me concedes.</p>
+                        <p>Ilumina mi mente y mi corazón con tu Espíritu Santo para que pueda reconocer tu presencia en mi vida. Ayúdame a confiar en tu plan divino, especialmente cuando enfrento incertidumbre o dificultades.</p>
+                        <p>Fortalece mi fe para que, como Jesús enseñó, yo también pueda ser testigo de tu amor y compasión hacia los demás.</p>
+                        <p>Que tu Palabra sea lámpara para mis pies y luz para mi camino.</p>
+                        <p>Amén.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publish-steps">
+                <h3><i class="fas fa-cloud-upload-alt"></i> ¿Problemas para publicar en GitHub Pages?</h3>
+                <p>Sigue estos pasos para solucionar los problemas más comunes:</p>
+                <ol>
+                    <li>Asegúrate de que tu archivo se llama <strong>index.html</strong> (exactamente así, en minúsculas)</li>
+                    <li>Verifica que esté en la raíz del repositorio (no dentro de ninguna carpeta)</li>
+                    <li>En la configuración de GitHub Pages, selecciona la rama <strong>main</strong> (o master)</li>
+                    <li>Selecciona la carpeta <strong>/ (root)</strong></li>
+                    <li>Espera unos minutos después de guardar los cambios</li>
+                    <li>Visita: https://TU_USUARIO.github.io/NOMBRE_DEL_REPOSITORIO</li>
+                </ol>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Que la paz del Señor, que sobrepasa todo entendimiento, guarde tu corazón y tu mente</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userInput = document.getElementById('user-input');
+            const findVerseBtn = document.getElementById('find-verse');
+            const resultsDiv = document.getElementById('results');
+            const loadingDiv = document.getElementById('loading');
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // Base de datos de versículos con interpretaciones
+            const versesByTheme = {
+                tristeza: [
+                    { 
+                        text: "El Señor está cerca de los quebrantados de corazón, y salva a los abatidos de espíritu.", 
+                        reference: "Salmos 34:18",
+                        interpretation: "Dios no está distante en nuestro dolor. Al contrario, se acerca especialmente a quienes sufren, ofreciendo consuelo y salvación en los momentos de mayor quebranto."
+                    },
+                    { 
+                        text: "Porque su ira dura sólo un momento, pero su favor dura toda la vida; el llanto puede persistir toda la noche, pero por la mañana resplandece la alegría.", 
+                        reference: "Salmos 30:5",
+                        interpretation: "Este versículo nos recuerda que el sufrimiento es temporal, pero el amor de Dios es eterno. Aún en la noche más oscura, podemos esperar con confianza la alegría que llegará con el nuevo día."
+                    }
+                ],
+                ansiedad: [
+                    { 
+                        text: "Echad toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.", 
+                        reference: "1 Pedro 5:7",
+                        interpretation: "Dios nos invita a descargar sobre Él todas nuestras preocupaciones. No estamos solos en nuestras luchas; tenemos un Padre amoroso que se preocupa por cada aspecto de nuestra vida."
+                    },
+                    { 
+                        text: "Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias.", 
+                        reference: "Filipenses 4:6",
+                        interpretation: "En lugar de permitir que la ansiedad nos domine, debemos acudir a Dios en oración, expresando nuestras necesidades con corazones agradecidos. La gratitud transforma nuestra perspectiva."
+                    }
+                ],
+                miedo: [
+                    { 
+                        text: "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.", 
+                        reference: "Isaías 41:10",
+                        interpretation: "Dios nos ofrece su presencia constante como antídoto contra el miedo. No estamos solos en nuestras batallas; Él nos fortalece, ayuda y sostiene con su poder infinito."
+                    }
+                ],
+                esperanza: [
+                    { 
+                        text: "Porque yo sé los planes que tengo para vosotros, declares Jehová, planes de bienestar y no de mal, para daros porvenir y esperanza.", 
+                        reference: "Jeremías 29:11",
+                        interpretation: "Dios tiene un plan perfecto para cada uno de nosotros, lleno de esperanza y bienestar. Aunque no siempre entendamos Sus caminos, podemos confiar en que Su propósito es siempre para nuestro bien."
+                    }
+                ],
+                alegria: [
+                    { 
+                        text: "Regocijaos en el Señor siempre. Otra vez digo: ¡Regocijaos!", 
+                        reference: "Filipenses 4:4",
+                        interpretation: "La alegría cristiana no depende de las circunstancias externas, sino de nuestra relación con Dios. Es un gozo profundo que persiste aún en medio de las dificultades."
+                    }
+                ],
+                fuerza: [
+                    { 
+                        text: "Todo lo puedo en Cristo que me fortalece.", 
+                        reference: "Filipenses 4:13",
+                        interpretation: "Nuestra fuerza no proviene de nosotros mismos, sino de Cristo que vive en nosotros. Con Él, podemos enfrentar cualquier desafío y superar cualquier obstáculo."
+                    }
+                ]
+            };
+            
+            // Función para analizar el sentimiento del usuario y encontrar versículos relevantes
+            function findRelevantVerses(text) {
+                text = text.toLowerCase();
+                const relevantThemes = [];
+                
+                // Detectar temas basados en palabras clave
+                if (text.includes('triste') || text.includes('solo') || text.includes('soledad') || text.includes('deprimido')) {
+                    relevantThemes.push('tristeza');
+                }
+                if (text.includes('ansiedad') || text.includes('nervioso') || text.includes('preocupado') || text.includes('estrés')) {
+                    relevantThemes.push('ansiedad');
+                }
+                if (text.includes('miedo') || text.includes('temor') || text.includes('asustado') || text.includes('atemorizado')) {
+                    relevantThemes.push('miedo');
+                }
+                if (text.includes('esperanza') || text.includes('futuro') || text.includes('mañana') || text.includes('confiar')) {
+                    relevantThemes.push('esperanza');
+                }
+                if (text.includes('alegría') || text.includes('feliz') || text.includes('gozo') || text.includes('contento')) {
+                    relevantThemes.push('alegria');
+                }
+                if (text.includes('débil') || text.includes('cansado') || text.includes('agotado') || text.includes('fuerza')) {
+                    relevantThemes.push('fuerza');
+                }
+                
+                // Si no se detecta ningún tema específico, usar todos los versículos
+                if (relevantThemes.length === 0) {
+                    return getAllVerses();
+                }
+                
+                // Obtener versículos de los temas relevantes
+                const relevantVerses = [];
+                relevantThemes.forEach(theme => {
+                    if (versesByTheme[theme]) {
+                        relevantVerses.push(...versesByTheme[theme]);
+                    }
+                });
+                
+                return relevantVerses;
+            }
+            
+            // Función para obtener todos los versículos
+            function getAllVerses() {
+                const allVerses = [];
+                for (const theme in versesByTheme) {
+                    allVerses.push(...versesByTheme[theme]);
+                }
+                return allVerses;
+            }
+            
+            // Función para mostrar los versículos
+            function displayVerses(verses) {
+                if (verses.length === 0) {
+                    resultsDiv.innerHTML = '<div class="message">No se encontraron versículos relevantes. Por favor, intenta describir tus sentimientos de otra manera.</div>';
+                    return;
+                }
+                
+                // Seleccionar hasta 3 versículos aleatorios
+                const randomVerses = [];
+                const maxVerses = Math.min(3, verses.length);
+                
+                while (randomVerses.length < maxVerses) {
+                    const randomIndex = Math.floor(Math.random() * verses.length);
+                    if (!randomVerses.includes(verses[randomIndex])) {
+                        randomVerses.push(verses[randomIndex]);
+                    }
+                }
+                
+                let html = '';
+                randomVerses.forEach(verse => {
+                    html += `
+                        <div class="verse-card">
+                            <div class="verse-text">"${verse.text}"</div>
+                            <div class="verse-reference">${verse.reference}</div>
+                            <div class="interpretation">
+                                <strong>💡 Reflexión:</strong> ${verse.interpretation}
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                // Añadir mensaje de cariño
+                html += `
+                    <div class="message">
+                        <p>Que estos versículos te traigan consuelo y paz. Recuerda que Dios te ama y está contigo siempre. 💖</p>
+                    </div>
+                `;
+                
+                resultsDiv.innerHTML = html;
+            }
+            
+            // Event listener para el botón
+            findVerseBtn.addEventListener('click', function() {
+                const userText = userInput.value.trim();
+                
+                if (userText === '') {
+                    resultsDiv.innerHTML = '<div class="message">Por favor, comparte cómo te sientes para que podamos sugerirte versículos apropiados.</div>';
+                    return;
+                }
+                
+                // Mostrar carga
+                loadingDiv.style.display = 'block';
+                resultsDiv.innerHTML = '';
+                
+                // Simular procesamiento
+                setTimeout(() => {
+                    const relevantVerses = findRelevantVerses(userText);
+                    displayVerses(relevantVerses);
+                    loadingDiv.style.display = 'none';
+                }, 1500);
+            });
+            
+            // Funcionalidad de pestañas
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    
+                    // Desactivar todas las pestañas y contenidos
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Activar la pestaña clickeada
+                    tab.classList.add('active');
+                    document.getElementById(`${tabId}-content`).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
